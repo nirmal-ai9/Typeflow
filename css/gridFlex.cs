@@ -1,1 +1,214 @@
+#typeflow, #heading-wrap{ 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+#kb-wrap{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: auto;
+  grid-template-areas: "text kb kb";
+}
+
+.info{
+  grid-area: text;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+#btn-wrap{
+  grid-area: kb;
+}
+
+#typing-area{
+  display: grid;
+  padding: 2rem;
+  grid-auto-rows: auto;
+  gap: 2rem;
+}
+.default{
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "p p p p"
+    "line line line level"
+    "form form form level"
+    "form form form level"
+    "form form form level"
+    "form form form btn"
+    "stats stats stats stats";
+}
+.non-d{
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 
+    "p p btn"
+    "form form form"
+    "form form form"
+    "form form form"
+    "form form form"
+    "stats stats stats";
+}
+
+/* p */
+
+#s-p{
+  grid-area: p;
+}
+
+/* button */
+
+#refresh{
+  grid-area: btn;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#svg-container, .value{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#icon {
+  display: grid;
+  place-items: center;
+}
+
+/* stats */
+
+#stats-wrap{
+  grid-area: stats;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+}
+.variable-wrap{
+  display: flex;
+  gap: 1rem;
+}
+
+/* form */
+
+#form-wrap{
+  grid-area: form;
+}
+form{
+  display: grid;
+}
+.input{ 
+  grid-area: 1/1;
+}
+
+/* level */
+
+.default-level{
+  display: flex;
+  gap: 0;
+  justify-content: center;
+  align-items: space-evenly;
+  flex-direction: column;
+  grid-area: level;
+  gap: 2rem;
+}
+.non-dlevel{
+  display: none;
+}
+#level-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 4rem;
+  gap: 0;
+  grid-template-areas:
+    "easy"
+    "normal"
+    "medium"
+    "hard"
+    "extreme";
+}
+#easy{
+  grid-area: easy;
+}
+#normal{
+  grid-area: normal;
+}
+#medium{
+  grid-area: medium;
+}
+#hard{
+  grid-area: hard;
+}
+#extreme{
+  grid-area: extreme;
+}
+
+/* line */
+
+.default-line{
+  grid-area: line;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.non-dline{
+  display: none;
+}
+#line-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-rows: auto;
+  grid-template-areas: 
+  "one two three four five";
+}
+#one{
+  grid-area: one;
+}
+#two{
+  grid-area: two;
+}
+#three{
+  grid-area: three;
+}
+#four{
+  grid-area: four;
+}
+#five{
+  grid-area: five;
+}
+
+@media (max-width: 624px){
+ .default { 
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "p p p btn"
+      "line line line line"
+      "form form form level"
+      "form form form level"
+      "stats stats stats stats"
+      ;
+  }
+  .non-d {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "p p btn"
+      "form form form"
+      "form form form"
+      "form form form"
+      "form form form"
+      "stats stats stats";
+  }
+  #kb-wrap{
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "text"
+    "text"
+    "kb";
+  }
+  #stats-wrap{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
